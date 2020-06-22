@@ -1,4 +1,5 @@
 #playerclass
+
 print("loaded player module with code 1")
 import pygame
 walk_left = [pygame.image.load("media/player/left1.png"), pygame.image.load("media/player/left2.png"), pygame.image.load("media/player/left3.png")]
