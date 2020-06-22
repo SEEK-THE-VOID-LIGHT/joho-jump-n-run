@@ -8,7 +8,7 @@ class playerclass(object):
     def __init__(self, startx, starty):
         self.x = startx
         self.y = starty
-        self.width = 47
+        self.width = 32
         self.height = 64
         self.left = False
         self.right = True
