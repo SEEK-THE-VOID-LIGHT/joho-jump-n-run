@@ -17,13 +17,11 @@ win = pygame.display.set_mode((window_width,window_height))
 pygame.display.set_caption("joho Jump'n'run")
 icon = pygame.image.load("media/icon.png")
 background = pygame.image.load("media/background.png")
-lostbackground = pygame.image.load("media/lost.png")
 winbackground = pygame.image.load("media/ending.png")
 pygame.display.set_icon(icon)
 clock = pygame.time.Clock()
 run = False
 menu = True
-lost = False
 ending = False
 
 
@@ -32,7 +30,7 @@ def redrawGameWindow():
     font = pygame.font.SysFont('comicsans', 60)
     
     win.blit(background, (0,0))
-    draw_grid(win)
+    #draw_grid(win)
     for single_block in blocks:
         single_block.draw(win)
     for single_end_block in endblocks:
@@ -55,11 +53,13 @@ if __name__ == "__main__":
     levelid = 0
     time_counter = 0
     reloadlevel = False
-    loadlevel(level[levelid])
+    player = playerclass(0, 0)
+    loadlevel(level[levelid], player)
+    original_time = seconds_left[levelid]
     pygame.mixer.music.set_volume(0.5)
     pygame.mixer.music.play(-1)
     print(playercords)
-    player = playerclass(playercords[0], playercords[1])
+    
     print(f"<< {len(blocks)} blocks were generated successfully >>")
 
 # MENU
@@ -94,7 +94,7 @@ if __name__ == "__main__":
 
         if not levelid >= len(level):
             if reloadlevel:
-                loadlevel(level[levelid])
+                loadlevel(level[levelid], player)
                 reloadlevel = False
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -151,9 +151,9 @@ if __name__ == "__main__":
         if player.iscolliding(winblocks):
             run = False
             ending = True
-            pygame.mixer.music.stop()
+            #pygame.mixer.music.stop()
             pygame.time.wait(500)
-            fanfare.play()
+            #fanfare.play()
 
         time_counter += 1
         if time_counter >= 60:
@@ -161,19 +161,12 @@ if __name__ == "__main__":
                 seconds_left[levelid] -= 1
             time_counter = 0
         print(time_counter)
-        if seconds_left[levelid] <= 0:
-            run = False
-            lost = True
+        if levelid < len(seconds_left):
+            if seconds_left[levelid] <= 0:
+                seconds_left[levelid] = original_time
+                loadlevel(level[levelid], player)
+
         redrawGameWindow()
-
-    while lost:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                lost = False
-
-        win.blit(lostbackground, (0,0))
-        pygame.mixer.music.stop()
-        pygame.display.update()
     
     while ending:
         done = False

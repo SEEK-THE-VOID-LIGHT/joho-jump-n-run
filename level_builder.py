@@ -15,7 +15,7 @@ def draw_grid(win):
         for j in range(16):
             pygame.draw.rect(win, (0,0,0), (i*50, j*50, 50, 50), 1)
 
-def loadlevel(level):
+def loadlevel(level, player):
     playercords.clear()
     blocks.clear()
     endblocks.clear()
@@ -40,3 +40,5 @@ def loadlevel(level):
             block_x += 50
         block_x = 0
         block_y += 50
+    player.x = playercords[0]
+    player.y = playercords[1]

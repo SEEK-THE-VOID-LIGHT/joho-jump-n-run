@@ -5,7 +5,7 @@ import pygame
 dirtblock = pygame.image.load("media/dirtblock.png")
 endblockimage =  pygame.image.load("media/icon.png")
 structureblockimage = pygame.image.load("media/structureblock.png")
-winblockimage = pygame.image.load("media/icon.png")
+winblockimage = pygame.image.load("media/winnercup.png")
 
 class standardblock(object):
     def __init__(self, x, y, width, height, color):
