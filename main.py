@@ -51,7 +51,7 @@ def redrawGameWindow():
 
 #main function
 if __name__ == "__main__":
-    levelid = 0
+    levelid = 4
     time_counter = 0
     reloadlevel = False
     player = playerclass(0, 0)
@@ -153,9 +153,9 @@ if __name__ == "__main__":
         if player.iscolliding(winblocks):
             run = False
             ending = True
-            #pygame.mixer.music.stop()
+            pygame.mixer.music.stop()
             pygame.time.wait(500)
-            #fanfare.play()
+            fanfare.play()
 
         time_counter += 1
         if time_counter >= 60:
