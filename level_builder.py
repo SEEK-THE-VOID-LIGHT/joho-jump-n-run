@@ -17,6 +17,7 @@ def draw_grid(win):
 def drawui(win):
     #setup
     font = pygame.font.SysFont('comicsans', 60)
+    #not finished
 
 def loadlevel(level):
     global playercords
