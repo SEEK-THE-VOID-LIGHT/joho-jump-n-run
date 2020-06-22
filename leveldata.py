@@ -1,3 +1,6 @@
+#leveldata
+print("loaded level module with code 1")
+
 level1 = [  "....................",
             "....................",
             "....................",

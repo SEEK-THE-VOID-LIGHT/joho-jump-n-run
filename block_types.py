@@ -1,3 +1,6 @@
+#block types
+print("loaded block core module with code 1")
+
 import pygame
 dirtblock = pygame.image.load("media/dirtblock.png")
 endblockimage =  pygame.image.load("media/icon.png")
