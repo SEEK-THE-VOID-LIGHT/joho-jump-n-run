@@ -8,6 +8,7 @@ playercords = []
 blocks = []
 endblocks = []
 structureblocks = []
+winblocks = []
 
 def draw_grid(win):
     for i in range(20):
@@ -19,6 +20,7 @@ def loadlevel(level):
     blocks.clear()
     endblocks.clear()
     structureblocks.clear()
+    winblocks.clear()
 
     block_x = 0
     block_y = 0
@@ -33,6 +35,8 @@ def loadlevel(level):
                 endblocks.append(endblock(block_x,block_y))
             if char == "x":
                 structureblocks.append(structureblock(block_x, block_y))
+            if char == "W":
+                winblocks.append(winblock(block_x, block_y))
             block_x += 50
         block_x = 0
         block_y += 50

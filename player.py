@@ -53,9 +53,3 @@ class playerclass(object):
             if self.x + self.width > block.x and self.x < block.x + block.width:
                 if self.y  + self.height > block.y and self.y < block.y + block.height:
                     return True
-    
-    def player_is_on_endblock(self, blocks):
-        for block in blocks:
-            if self.x + self.width > block.x and self.x < block.x + block.width:
-                if self.y  + self.height > block.y and self.y < block.y + block.height:
-                    return True
