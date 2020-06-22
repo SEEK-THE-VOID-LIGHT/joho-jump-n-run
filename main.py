@@ -96,6 +96,7 @@ if __name__ == "__main__":
         if not levelid >= len(level):
             if reloadlevel:
                 loadlevel(level[levelid], player)
+                original_time = seconds_left[levelid]
                 reloadlevel = False
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
