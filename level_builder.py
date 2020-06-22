@@ -14,13 +14,12 @@ def draw_grid(win):
         for j in range(16):
             pygame.draw.rect(win, (0,0,0), (i*50, j*50, 50, 50), 1)
 
-def drawui(win):
-    #setup
-    font = pygame.font.SysFont('comicsans', 60)
-    #not finished
-
 def loadlevel(level):
-    global playercords
+    playercords.clear()
+    blocks.clear()
+    endblocks.clear()
+    structureblocks.clear()
+
     block_x = 0
     block_y = 0
     for row in level:

@@ -20,8 +20,11 @@ pygame.display.set_icon(icon)
 clock = pygame.time.Clock()
 run = True
 
+
 #redraw function
 def redrawGameWindow():
+    font = pygame.font.SysFont('comicsans', 60)
+    
     win.blit(background, (0,0))
     #draw_grid(win)
     for single_block in blocks:
@@ -30,13 +33,21 @@ def redrawGameWindow():
         single_end_block.draw(win)
     for single_structure_block in structureblocks:
         single_structure_block.draw(win)
+    try:
+        text = font.render(f"Time left: {seconds_left[levelid]}", 1, (0,0,0))
+        win.blit(text, (30,30))
+    except:
+        pass
     player.draw(win)
 
     pygame.display.update()
 
 #main loop
 if __name__ == "__main__":
-    loadlevel(level1)
+    levelid = 0
+    time_counter = 0
+    reloadlevel = False
+    loadlevel(level[levelid])
     pygame.mixer.music.set_volume(0.5)
     pygame.mixer.music.play(-1)
     print(playercords)
@@ -44,7 +55,13 @@ if __name__ == "__main__":
     print(f"<< {len(blocks)} blocks were generated successfully >>")
 
     while run:
+
         clock.tick(60)
+
+        if not levelid >= len(level):
+            if reloadlevel:
+                loadlevel(level[levelid])
+                reloadlevel = False
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -93,7 +110,15 @@ if __name__ == "__main__":
 
         if player.player_is_on_endblock(endblocks):
             print("WIN")
-            run = False
+            #pygame.time.wait(300)
+            reloadlevel = True
+            levelid += 1
 
+        time_counter += 1
+        if time_counter >= 60:
+            if levelid < len(seconds_left):
+                seconds_left[levelid] -= 1
+            time_counter = 0
+        print(time_counter)
         redrawGameWindow()
 pygame.quit()
