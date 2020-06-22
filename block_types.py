@@ -4,6 +4,7 @@ print("loaded block core module with code 1")
 import pygame
 dirtblock = pygame.image.load("media/dirtblock.png")
 endblockimage =  pygame.image.load("media/icon.png")
+structureblockimage = pygame.image.load("media/structureblock.png")
 
 class standardblock(object):
     def __init__(self, x, y, width, height, color):
@@ -22,6 +23,14 @@ class endblock(object):
         self.y = y
         self.width = 50
         self.height = 50
-        self.color = (0,255,0)
     def draw(self, win):
         win.blit(endblockimage, (self.x, self.y))
+
+class structureblock(object):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.width = 50
+        self.height = 50
+    def draw(self, win):
+        win.blit(structureblockimage, (self.x, self.y))

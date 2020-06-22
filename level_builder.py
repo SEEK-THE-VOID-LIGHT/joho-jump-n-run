@@ -7,6 +7,7 @@ from block_types import *
 playercords = []
 blocks = []
 endblocks = []
+structureblocks = []
 
 def draw_grid(win):
     for i in range(20):
@@ -30,6 +31,8 @@ def loadlevel(level):
                 playercords.append(block_y-50)
             if char == "E":
                 endblocks.append(endblock(block_x,block_y))
+            if char == "x":
+                structureblocks.append(structureblock(block_x, block_y))
             block_x += 50
         block_x = 0
         block_y += 50

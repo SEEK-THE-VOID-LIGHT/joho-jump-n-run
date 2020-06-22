@@ -25,6 +25,8 @@ def redrawGameWindow():
         single_block.draw(win)
     for single_end_block in endblocks:
         single_end_block.draw(win)
+    for single_structure_block in structureblocks:
+        single_structure_block.draw(win)
     player.draw(win)
 
     pygame.display.update()
