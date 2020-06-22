@@ -1,5 +1,4 @@
 #joho jump'run
-#pop test
 import pygame
 from player import *
 from leveldata import *
