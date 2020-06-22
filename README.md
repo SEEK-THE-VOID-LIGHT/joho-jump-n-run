@@ -4,3 +4,6 @@
 
 Music: Pump it -- Rezonate
 The images are either self made or provided by Pixabay.com
+
+to run it install dependencies with pip install -r requirenments.txt
+Python 3.7.7 is recommended
