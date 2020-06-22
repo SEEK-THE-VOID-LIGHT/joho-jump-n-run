@@ -2,6 +2,7 @@
 print("loaded main code with code 1")
 
 import pygame
+import os
 from player import *
 from leveldata import *
 from level_builder import *
@@ -9,6 +10,8 @@ window_width = 1000
 window_height = 800
 
 pygame.init()
+jumpsound = pygame.mixer.Sound(os.path.join("media", "sounds", "jump.wav"))
+music = pygame.mixer.music.load(os.path.join("media", "sounds", "pumpit.mp3"))
 win = pygame.display.set_mode((window_width,window_height))
 pygame.display.set_caption("joho Jump'n'run")
 icon = pygame.image.load("media/icon.png")
@@ -19,7 +22,7 @@ run = True
 
 #redraw function
 def redrawGameWindow():
-    win.blit(background, (0,0 ))
+    win.blit(background, (0,0))
     #draw_grid(win)
     for single_block in blocks:
         single_block.draw(win)
@@ -34,6 +37,8 @@ def redrawGameWindow():
 #main loop
 if __name__ == "__main__":
     loadlevel(level1)
+    pygame.mixer.music.set_volume(0.5)
+    pygame.mixer.music.play(-1)
     print(playercords)
     player = playerclass(playercords[0], playercords[1])
     print(f"<< {len(blocks)} blocks were generated successfully >>")
@@ -67,6 +72,7 @@ if __name__ == "__main__":
         if not player.is_jump:
             if player.can_jump_again:
                 if keys[pygame.K_SPACE]:
+                    jumpsound.play()
                     player.is_jump = True
                     player.can_jump_again = False
                     player.left = False
