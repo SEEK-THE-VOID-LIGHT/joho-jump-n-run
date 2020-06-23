@@ -29,6 +29,8 @@ def loadlevel(level, player):
         for char in row:
             if char == "o":
                 blocks.append(standardblock(block_x, block_y, 50, 50, (0,255,0)))
+            if char == "O":
+                blocks.append(standardblock_filled(block_x, block_y, 50, 50, (0,255,0)))
             if char == "S":
                 playercords.append(block_x)
                 playercords.append(block_y-50)
