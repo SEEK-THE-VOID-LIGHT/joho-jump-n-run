@@ -13,7 +13,7 @@ window_height = 800
 pygame.init()
 jumpsound = pygame.mixer.Sound(os.path.join("media", "sounds", "jump.wav"))
 fanfare = pygame.mixer.Sound(os.path.join("media","sounds","ending.wav"))
-music = pygame.mixer.music.load(os.path.join("media", "sounds", "pumpit.mp3"))
+music = pygame.mixer.music.load(os.path.join("media", "sounds", "goinghigher.mp3"))
 win = pygame.display.set_mode((window_width,window_height))
 pygame.display.set_caption("joho Jump'n'run")
 icon = pygame.image.load("media/icon.png")
@@ -51,7 +51,7 @@ def redrawGameWindow():
 
 #main function
 if __name__ == "__main__":
-    levelid = 4
+    levelid = 0
     time_counter = 0
     reloadlevel = False
     player = playerclass(0, 0)

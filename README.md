@@ -2,7 +2,8 @@
 ### a small time based jump'n'run game
 #### you have limited time to complete a level as fast as possible
 
-Music: Pump it -- Rezonate
+##### Music: bensound.com and freesound.org
+###### I am fucking poor
 The images are either self made or provided by Pixabay.com
 
 to run it install dependencies with pip install -r requirenments.txt
