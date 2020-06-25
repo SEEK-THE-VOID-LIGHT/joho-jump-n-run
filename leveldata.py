@@ -4,6 +4,7 @@ print("loaded level module with code 1")
 # ------------------
 # ==> reference:
 # o -> normal block
+# O -> normal block withour 'grass'
 # x -> structure block
 # S -> start block
 # E -> end block
@@ -25,7 +26,7 @@ print("loaded level module with code 1")
 #             "....................",
 #             "S...................",
 #             "oooooooooooooooooooo"]
-seconds_left = [8,11,8,8,6]
+seconds_left = [8,11,8,8,6,11]
 level = [[  "....................",
             "....................",
             "......oo.........oEo",
@@ -101,7 +102,7 @@ level = [[  "....................",
             "....o...............",
             ".o..x.........xx.xx.",
             ".x..x.........xx.xx.",
-            ".x..x...........W...",
+            ".x..x...........E...",
             "ox..x.........x...x.",
             "xx..x..........xxx..",
             "xx..x...............",
@@ -109,4 +110,21 @@ level = [[  "....................",
             "xx..x.x....x........",
             "xx..x.x....x........",
             "xx..x.x.S..xo.......",
-            "oooooooooooooooooooo"]]
+            "oooooooooooooooooooo"],
+
+        [   ".oooooo.............",
+            ".O....Oo............",
+            ".OS...Ox....o...o...",
+            ".Oooo.O....ox...x..o",
+            ".x..O.O...oxx...x..x",
+            "..x.O.O..oxxx...x..x",
+            "...xO.O.oxxxx...x.ox",
+            "...xO.Ooxxxxx...x.xx",
+            "...xO.Oxxxxxx...o.xx",
+            "...xO.....xxx...x.xx",
+            "...xO......xx.o.x.xx",
+            "...xOoo.....x.x.x.xx",
+            "...xxxxo....o.x.x.xx",
+            "...xxWxxo...x.x.x.xx",
+            "...xxxxxxoo.x.x.x.xx",
+            "oooooooooOOooooooooo"]]

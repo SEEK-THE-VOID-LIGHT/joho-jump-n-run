@@ -51,7 +51,7 @@ def redrawGameWindow():
 
 #main function
 if __name__ == "__main__":
-    levelid = 0
+    levelid = 4
     time_counter = 0
     reloadlevel = False
     player = playerclass(0, 0)
