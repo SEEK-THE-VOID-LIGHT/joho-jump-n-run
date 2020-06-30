@@ -31,7 +31,7 @@ def redrawGameWindow():
     font = pygame.font.SysFont('comicsans', 60)
     
     win.blit(background, (0,0))
-    #draw_grid(win)
+    draw_grid(win)
     for single_block in blocks:
         single_block.draw(win)
     for single_end_block in endblocks:
@@ -51,7 +51,7 @@ def redrawGameWindow():
 
 #main function
 if __name__ == "__main__":
-    levelid = 0
+    levelid = 6
     time_counter = 0
     reloadlevel = False
     player = playerclass(0, 0)

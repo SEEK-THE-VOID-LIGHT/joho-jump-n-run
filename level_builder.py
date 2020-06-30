@@ -31,6 +31,10 @@ def loadlevel(level, player):
                 blocks.append(standardblock(block_x, block_y, 50, 50, (0,255,0)))
             if char == "O":
                 blocks.append(standardblock_filled(block_x, block_y, 50, 50, (0,255,0)))
+            if char == "q":
+                blocks.append(standartblock_wood(block_x,block_y))
+            if char == "Q":
+                structureblocks.append(standartblock_wood_filled(block_x,block_y))
             if char == "S":
                 playercords.append(block_x)
                 playercords.append(block_y-50)

@@ -5,6 +5,7 @@ print("loaded level module with code 1")
 # ==> reference:
 # o -> normal block
 # O -> normal block withour 'grass'
+# q -> normal wood block
 # x -> structure block
 # S -> start block
 # E -> end block
@@ -26,7 +27,7 @@ print("loaded level module with code 1")
 #             "....................",
 #             "S...................",
 #             "oooooooooooooooooooo"]
-seconds_left = [8,11,8,8,6,11]
+seconds_left = [8,11,8,8,6,11,9]
 level = [[  "....................",
             "....................",
             "......oo.........oEo",
@@ -127,4 +128,21 @@ level = [[  "....................",
             "...xxxxo....o.x.x.xx",
             "...xxWxxo...x.x.x.xx",
             "...xxxxxxoo.x.x.x.xx",
-            "oooooooooOOooooooooo"]]
+            "oooooooooOOooooooooo"],
+
+        [   "....................",
+            ".q.......W..........",
+            ".Q....qqqq..........",
+            ".Q....QQQQ..........",
+            "qQ...QQ.............",
+            "QQ..QQ..............",
+            "QQ.QQ...............",
+            "QqQQ................",
+            "QQ............q.....",
+            "QQ............Q..q..",
+            "qQ............Q..Q..",
+            "Qq.qq..q......Q..Q..",
+            "QQ.QQ..Q......Q..Qq.",
+            "QQQQQQ.Q......Q..QQ.",
+            "QQQQQQQQ......Q..QQS",
+            "oooooooooooooooooooo"]]
