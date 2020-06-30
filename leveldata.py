@@ -127,7 +127,7 @@ level = [[  "....................",
             "...xO......xx.o.x.xx",
             "...xOoo.....x.x.x.xx",
             "...xxxxo....o.x.x.xx",
-            "...xxWxxo...x.x.x.xx",
+            "...xxExxo...x.x.x.xx",
             "...xxxxxxoo.x.x.x.xx",
             "oooooooooOOooooooooo"],
 
