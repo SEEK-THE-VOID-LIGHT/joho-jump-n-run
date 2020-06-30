@@ -31,7 +31,7 @@ def redrawGameWindow():
     font = pygame.font.SysFont('comicsans', 60)
     
     win.blit(background, (0,0))
-    draw_grid(win)
+    #draw_grid(win)
     for single_block in blocks:
         single_block.draw(win)
     for single_end_block in endblocks:

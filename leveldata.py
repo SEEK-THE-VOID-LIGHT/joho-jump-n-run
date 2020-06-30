@@ -6,6 +6,7 @@ print("loaded level module with code 1")
 # o -> normal block
 # O -> normal block withour 'grass'
 # q -> normal wood block
+# Q -> wood structure block
 # x -> structure block
 # S -> start block
 # E -> end block
