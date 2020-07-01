@@ -28,7 +28,7 @@ print("loaded level module with code 1")
 #             "....................",
 #             "S...................",
 #             "oooooooooooooooooooo"]
-seconds_left = [8,11,8,8,6,11,9]
+seconds_left = [8,11,8,8,6,12,9]
 level = [[  "....................",
             "....................",
             "......oo.........oEo",
